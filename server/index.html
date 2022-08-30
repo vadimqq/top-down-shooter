@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irlix Ground 2D</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" href="../static/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <h1>Irlix Ground 2D</h1>
+  </header>
+  <div class="main">
+    <div class="left-ui" id="left-ui-js">1</div>
+
+    <div class="center-game">
+      <canvas id="canvas_bg"></canvas>
+      <canvas id="canvas_neutral-object"></canvas>
+      <canvas id="canvas"></canvas>
+
+      <form id="js-change-name-form" class="form" action="submit">
+        <h1 class="main__title">Irlix Ground 2D</h1>
+        <input class="form__input" name="name" type="text" placeholder="Name" />
+        <div class="main__button">
+          <button type="submit" onclick="form.classList.add('hidden')">
+            Start
+          </button>
+        </div>
+      </form>
+
+      <div class="dead-screen" id="dead-screen-js">
+        <p class="dead-screen__text">Потрачено</p>
+        <p class="dead-screen__description">Скоро вы воскресните</p>
+      </div>
+    </div>
+
+    <div class="right-ui">
+      <aside class="ui" id="js-ui">
+        <dvi class="stat-list">
+          <table>
+            <thead>
+              <tr>
+                <td>Имя</td>
+                <td>Счет</td>
+                <td>Нанесено</td>
+                <td>Получено</td>
+              </tr>
+            </thead>
+            <tbody id="js-ui-li"></tbody>
+          </table>
+        </dvi>
+      </aside>
+    </div>
+  </div>
+
+  <div class="assets-audio">
+    <audio id="js-shoot" src="../static/assets/shoot2.m4a"></audio>
+    <audio id="js-damage" src="../static/assets/killer.m4a"></audio>
+    <audio id="js-pop" src="../static/assets/pop.m4a"></audio>
+    <audio id="js-dead" src="../static/assets/loh.m4a"></audio>
+  </div>
+
+  <div class="assets-image">
+    <img src="../static/assets/aid.png" id="js-aid-img" />
+    <img src="../static/assets/ammo.png" id="js-ammo-img" />
+    <img src="../static/assets/damage.png" id="js-damage-img" />
+
+    <img src="../static/assets/wall.png" id="js-wall-img" />
+    <img src="../static/assets/man-blue.png" id="js-trooper-img-blue" />
+    <img src="../static/assets/man-green.png" id="js-trooper-img-green" />
+    <img src="../static/assets/man-pink.png" id="js-trooper-img-pink" />
+    <img src="../static/assets/man-red.png" id="js-trooper-img-red" />
+  </div>
+</body>
+
+<script src="../static/constsStatic.js"></script>
+<script src="../static/utils.js"></script>
+<script src="../static/drawPlayer.js"></script>
+<script src="../static/drawProjectile.js"></script>
+<script src="../static/game.js"></script>
+<script src="../static/move.js"></script>
+<script src="../static/mouseMove.js"></script>
+<script src="../static/ui.js"></script>
+<script src="../static/shoot.js"></script>
+
+</html>
